@@ -35,10 +35,10 @@ class ContainersController < ::ApplicationController
   end
 
   def commit
-    Docker::Container.get(@container.uuid).commit(:author  => params[:commit][:author],
-                                                  :repo    => params[:commit][:repo],
-                                                  :tag     => params[:commit][:tag],
-                                                  :comment => params[:commit][:comment])
+    ForemanDocker::Docker.get_container(@container).commit(:author  => params[:commit][:author],
+                                                           :repo    => params[:commit][:repo],
+                                                           :tag     => params[:commit][:tag],
+                                                           :comment => params[:commit][:comment])
 
     process_success :success_redirect => :back,
                     :success_msg      => _("%{container} commit was successful") %
