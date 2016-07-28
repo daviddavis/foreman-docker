@@ -22,4 +22,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'docker-api', '~> 1.18'
   s.add_dependency 'deface', '< 2.0'
   s.add_dependency 'wicked', '~> 1.1'
+  s.add_dependency 'protected_attributes'
 end
